@@ -1,0 +1,119 @@
+/* Colours */
+:root {
+	--title-text-color: white;
+	--title-background-color: #fafafa;
+    --header-text-color: rgb(0, 0, 0);
+	--header-text-color-hover: rgb(27, 27, 27);
+	--header-background-color: #fafafa;
+	--background-color: #f2f1f0;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: var(--background-color);
+}
+
+.imageBanner {
+    margin: auto;
+	position: relative;
+	width: 90%;
+	height: 90vh;
+
+	background-image: url("temp image.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Dim the Banner Background Image to make text readable */
+.imageBanner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.ImageBannerText {
+    position: absolute;
+    top: 0;
+	box-sizing: border-box;
+	margin: 1em;
+
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+    
+	color: var(--title-text-color);
+	padding: 1em;
+	height: 100%;
+	text-align: center;
+	font-size: 2em;
+}
+
+#subTitle {
+	color: var(--red);
+	font-size: 1em;
+}
+
+h1 {
+	margin: 0;
+}
+header {
+	box-sizing: border-box;
+	position: sticky; /* Sticky instead of fixed because fixed causes text to move underneath header */
+	top: 0;
+    /* Using borders with the colour of the background instead of margins so that the text is cut off when it passes over. */
+    border-top: var(--background-color) 1em solid;
+    border-right: var(--background-color) 5vw solid;
+    border-left: var(--background-color) 5vw solid;
+    border-bottom: var(--background-color) 0.5em solid;
+	background-color: var(--header-background-color);
+
+	padding: 1em 5%;
+}
+
+nav {
+
+	display: flex;
+	align-items: last baseline; /* Aligns nav items to bottom of header so that they look nice on on overflow */
+	gap: 1em;
+}
+
+.left-nav {
+	width: 50%;
+	text-align: left;
+}
+
+.right-nav {
+	width: 50%;
+	text-align: right;
+
+	display: flex;
+	gap: 1em;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+}
+.right-nav > a,
+.left-nav > h1 > a {
+	color: var(--header-text-color);
+	text-decoration: none;
+}
+
+.right-nav > a:hover,
+.left-nav > h1 > a:hover {
+	color: var(--header-text-color-hover);
+	text-decoration: underline;
+	/* Faking a bold look without causing the text to shift*/
+	text-shadow: 0 0 0.01px var(--header-text-color-hover);
+}
