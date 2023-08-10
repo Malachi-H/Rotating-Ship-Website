@@ -260,6 +260,10 @@ a:hover {
 	}
 } */
 
+#vertical-margin {
+	margin: 1em 0;
+}
+
 .footer {
 	box-sizing: border-box;
 	padding: 1em 5%;
